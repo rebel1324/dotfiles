@@ -1,6 +1,7 @@
 [core]
     excludesfile = ~/.gitignore
     editor = nvim
+    eol = lf
 [push]
     default = simple
 [color]
@@ -12,10 +13,15 @@
     ui = auto
 [alias]
     a = "!git status --short | fzf | awk '{print $2}' | xargs git add"
+    aa = add .
+    ac = "!git add . && git commit"
+    ap = "!git add . && git commit && git push"
     d = diff
     ch = diff --cached
+    what = diff --cached
     ls = diff --cached --name-status
     ck = checkout
+    ckm = checkout master
     c = commit -m
     p = push --set-upstream
     ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
@@ -34,6 +40,11 @@
     find = "!f() { git log --pretty=format:\"%h %cd [%cn] %s%d\" --date=relative -S'pretty' -S\"$@\" | fzf | awk '{print $1}' | xargs -I {} git diff {}^ {}; }; f"
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
     add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+    mr = !glab mr create
+    mm = !glab mr merge
+    issues = !glab issue list
+    ci = !glab ci view
+    unlock = '!find .git | grep "\\.lock\\$" | xargs rm'
 [hub]
     protocol = https
 [diff]
@@ -49,3 +60,5 @@
     smudge = git-lfs smudge -- %f
     required = true
     process = git-lfs filter-process
+[credential]
+    helper = store --file ~/.local/tokens
