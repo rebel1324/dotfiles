@@ -1,0 +1,55 @@
+HISTCONTROL=ignoreboth:erasedups HISTSIZE=100000 HISTFILESIZE=200000
+ls --color=al > /dev/null 2>&1 && alias ls='ls -F --color=al' || alias ls='ls -G'
+alias ll='ls -l'
+
+md () { [ $# = 1 ] && mkdir -p "$@" && cd "$@" || echo "Error - no directory passed!"; }
+git_branch () { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' | awk '{if(NR>0) printf(" %s ", $0)}'; }
+curdir() { pwd | sed "s#\(/[^/]\{1,\}/[^/]\{1,\}/[^/]\{1,\}/\).*\(/[^/]\{1,\}/[^/]\{1,\}\)/\{0,1\}#\1_\2#g"; }
+
+RESET="\[\017\]"
+WHITE_COLOR="\[\033[00;00m\]"
+LOCATION_COLOR="\[\033[00;34m\]"
+BRANCH_COLOR="\[\033[00;33m\]"
+CLIENT_COLOR="\[\033[42;1m\]"
+ 
+HOST='\033[02;36m\]\h'; HOST=' '$HOST
+TIME='\033[01;31m\]\t \033[01;32m\]'
+LOCATION="${LOCATION_COLOR} \W"
+BRANCH="${BRANCH_COLOR} `git_branch`${WHITE_COLOR} ${RESET}"
+CLNTSTR="${CLIENT_COLOR}  ${RESET}"
+PS1=${CLNTSTR}${LOCATION}${BRANCH}
+PS2='\[\033[01;36m\]>'
+
+set -o vi # vi at command line
+test -f ~/.bash_aliases && . $_
+test -f ~/.git-completion.bash && . $_
+test -s ~/.autojump/etc/profile.d/autojump && . $_
+
+[ ${BASH_VERSINFO[0]} -ge 4 ] && shopt -s autocd
+[ -f /etc/bash_completion ] && ! shopt -oq posix && . /etc/bash_completion
+
+export PATH="$PATH:/c/HashiCorp/Vagrant/bin:/c/Program Files/Git/bin/:/c/Python39:/c/Python39/Scripts:/c/ProgramData/chocolatey/bin:/c/Program Files/nodejs:$HOME/AppData/Roaming/npm:/c/Program Files (x86)/FontForgeBuilds/bin:/c/Program Files (x86)/FontForgeBuilds:$HOME/scoop/shims"
+export GOPATH="$GOPATH:/d/goproject:/d/gopath"
+
+#config alias
+alias vi=vim
+alias viconf="vi ~/.vimrc"
+alias vimconfig=viconf
+alias vconf=viconf
+alias vimconf=viconf
+alias dvalues="vi ~/.bashrc"
+alias defaults=dvalues
+alias setdefault=dvalues
+alias refreshenv='source ~/.bashrc'
+alias csv=scim
+alias ya="MSYS_NO_PATHCONV=1 yarn"
+VAGRANT_EXPERIMENTAL="disks"
+export PYTHONIOENCODING=utf8
+
+# daily reminder to not forget what im trying to do.
+
+# Task warrior
+alias tasktoday="task"
+alias whattoday="task"
+alias done="task done"
+alias what="task"

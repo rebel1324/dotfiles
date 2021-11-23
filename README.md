@@ -10,6 +10,9 @@
 * **Jetbrain IDE: IdeaVIM Configuration**
 * **NEOVim**
 * **tmux**
+* shell configuration file
+    * BASH Shell
+    * FISH Shell
 
 ## Main Fonts
 
@@ -19,10 +22,10 @@
 * **ANSI Mono**:
     1. Victor NerdFont
     2. Iosveka NerdFont
-* **CJK Documentation**: 
+* **CJK Documentation**:
     1. Adobe Bon Gothic CJK
     2. Noto Sans CJK
-* **ANSI Documentation**: 
+* **ANSI Documentation**:
     1. Roboto
     2. Roboto Condensed
 * **Korean Reading / Formal Font**: Adobe Bon Myeongjo KR
