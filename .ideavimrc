@@ -1,5 +1,6 @@
 " Required:
 filetype plugin indent on
+
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
@@ -72,6 +73,10 @@ nnoremap N Nzzzv
 "" Abbreviations
 "*****************************************************************************
 "" no one is really happy until you have this shortcuts
+cnoreabbrev ㅉ! w!
+cnoreabbrev ㅃ! q!
+cnoreabbrev ㅈ! w!
+cnoreabbrev ㅂ! q!
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
 cnoreabbrev Qall! qall!
@@ -79,6 +84,10 @@ cnoreabbrev Wq wq
 cnoreabbrev Wa wa
 cnoreabbrev wQ wq
 cnoreabbrev WQ wq
+cnoreabbrev ㅈㅂ! wq!
+cnoreabbrev ㅉㅃ! wq!
+cnoreabbrev ㅈㅃ! wq!
+cnoreabbrev ㅉㅂ! wq!
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
@@ -171,5 +180,28 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 
-" IntelliJ only shits
-noremap <Leader>r :action Run<CR>
+" IntelliJ actions
+" AceAction requires AceJump Plugins.
+nnoremap <Leader>r :action Run<CR>
+nnoremap <Leader>' di"i
+nnoremap '' di"i
+nnoremap <Leader>; :action Replace<CR>
+" Press `f` to activate AceJump
+nnoremap <Leader>f :action AceAction<CR>
+nnoremap ff :action AceAction<CR>
+" Press `F` to activate Target Mode
+nnoremap <Leader>F :action AceTargetAction<CR>
+nnoremap fF :action AceTargetAction<CR>
+" Press `g` to activate Line Mode
+nnoremap <Leader><Leader> :action AceLineAction<CR>
+nnoremap <Leader>f va':action SurroundWithLiveTemplate<CR>
+nnoremap s :action SurroundWith<CR>
+vmap s :action SurroundWith<CR>
+nnoremap R :action Replace<CR>
+nnoremap P :action GotoSymbol<CR>
+
+set surround
+
+" requires another third-party plugin to enable this feautre.
+" Idea Vim Extension
+set keep-english-in-normal-and-restore-in-insert enable
