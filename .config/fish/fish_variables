@@ -1,11 +1,5 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR TO_DIR:/home/carla/\x2etofish
-SETUVAR __fish_initialized:3100
-SETUVAR _fisher_PatrickF1_2F_fzf_2E_fish_files:/home/carla/\x2econfig/fish/functions/__fzf_extract_var_info\x2efish\x1e/home/carla/\x2econfig/fish/functions/__fzf_preview_file\x2efish\x1e/home/carla/\x2econfig/fish/functions/__fzf_report_file_type\x2efish\x1e/home/carla/\x2econfig/fish/functions/__fzf_search_current_dir\x2efish\x1e/home/carla/\x2econfig/fish/functions/__fzf_search_git_log\x2efish\x1e/home/carla/\x2econfig/fish/functions/__fzf_search_git_status\x2efish\x1e/home/carla/\x2econfig/fish/functions/__fzf_search_history\x2efish\x1e/home/carla/\x2econfig/fish/functions/__fzf_search_shell_variables\x2efish\x1e/home/carla/\x2econfig/fish/conf\x2ed/fzf\x2efish
-SETUVAR _fisher_joehillen_2F_to_2D_fish_files:/home/carla/\x2econfig/fish/functions/to\x2efish\x1e/home/carla/\x2econfig/fish/conf\x2ed/to\x2efish\x1e/home/carla/\x2econfig/fish/completions/to\x2efish
-SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/carla/\x2econfig/fish/functions/fisher\x2efish\x1e/home/carla/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ePatrickF1/fzf\x2efish\x1ejoehillen/to\x2dfish
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:F92672
